@@ -1,4 +1,5 @@
-#Integrantes: Jonathan Paredes, Vicente Aguero, Benjamin Gonzalez
+# Integrantes: Jonathan Paredes, Vicente Aguero, Benjamin Gonzalez
+from datos.datos_iniciales import crear_datos_iniciales
 from modelo.sistema import SistemaAeroChinquihue
 from controlador.controlador_vuelos import ControladorVuelos
 from vista.vista_consola import VistaConsola
