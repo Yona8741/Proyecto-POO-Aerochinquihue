@@ -1,0 +1,7 @@
+from enum import Enum
+class EstadoVuelo(Enum):
+    PROGRAMADO = "PROGRAMADO"
+    REPROGRAMADO = "REPROGRAMADO"
+    EN_SERVICIO = "EN_SERVICIO"
+    FINALIZADO = "FINALIZADO"
+    CANCELADO = "CANCELADO"
