@@ -1,4 +1,5 @@
 from decimal import Decimal, ROUND_HALF_UP
+#Representa un destino y las tarifas
 class Destino:
     def __init__(
         self,
@@ -16,6 +17,7 @@ class Destino:
         if not aerodromo_retiro.strip():
             raise ValueError("El aeródromo no puede estar vacío.")
         
+#inicialización de atributos privados
         self.__nombre = nombre
         self.__precio_pasaje_clp = precio_pasaje_clp
         self.__precio_encomienda_kg_clp = precio_encomienda_kg_clp
