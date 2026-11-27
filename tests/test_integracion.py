@@ -45,3 +45,38 @@ def test_sistema_vacio():
     sistema = SistemaAeroChinquihue([], [], [])
     assert sistema.consultar_destinos() == []
     assert sistema.consultar_vuelos() == []
+    
+    
+def test_listar_aviones():
+    destinos, aviones, vuelos = crear_datos_iniciales()
+    sistema = SistemaAeroChinquihue(destinos, aviones, vuelos)
+    controlador = ControladorVuelos(sistema)
+
+    assert controlador.listar_aviones() == aviones
+
+
+def test_buscar_vuelo():
+    destinos, aviones, vuelos = crear_datos_iniciales()
+    sistema = SistemaAeroChinquihue(destinos, aviones, vuelos)
+    controlador = ControladorVuelos(sistema)
+
+    assert controlador.buscar_vuelo("CHQ-002") is vuelos[1]
+    assert controlador.buscar_vuelo("INEXISTENTE") is None
+
+
+def test_buscar_destino():
+    destinos, aviones, vuelos = crear_datos_iniciales()
+    sistema = SistemaAeroChinquihue(destinos, aviones, vuelos)
+    controlador = ControladorVuelos(sistema)
+
+    assert controlador.buscar_destino("Chepu") is destinos[5]
+    assert controlador.buscar_destino("INEXISTENTE") is None
+
+
+def test_buscar_avion():
+    destinos, aviones, vuelos = crear_datos_iniciales()
+    sistema = SistemaAeroChinquihue(destinos, aviones, vuelos)
+    controlador = ControladorVuelos(sistema)
+
+    assert controlador.buscar_avion("CC-DEF") is aviones[1]
+    assert controlador.buscar_avion("INEXISTENTE") is None
